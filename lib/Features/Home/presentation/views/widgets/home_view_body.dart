@@ -17,11 +17,12 @@ class HomeViewBody extends StatelessWidget {
         FeaturedBooksListView(),
          SizedBox(height: 32,),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Best Seller', style: Styles.titleStyle18,),
+              SizedBox(height: 20,),
               BestSellerListViewItem(),
             ],
           ),
