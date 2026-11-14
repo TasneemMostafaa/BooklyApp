@@ -1,20 +1,23 @@
+import 'package:bookly/Features/Home/presentation/views/book_details_view.dart';
 import 'package:bookly/Features/Home/presentation/views/home_view.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/book_details_view_body.dart';
 import 'package:bookly/Features/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
-abstract class AppRouter{
-
+abstract class AppRouter {
   static const kHomeView = '/homeView';
-  static final router= GoRouter(
+  static const kBookDetailsView = '/bookDetailsView';
+  static final router = GoRouter(
     routes: [
-      GoRoute(
-      path: '/',
-      builder: (context, state)=> const SplashView(),),
+      GoRoute(path: '/', builder: (context, state) => const SplashView()),
 
-      GoRoute(path: kHomeView,
-      builder:(context, state) => const HomeView(),)
-    ]
+      GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
+
+      GoRoute(
+        path: kBookDetailsView,
+        builder: (context, state) => BookDetailsView(),
+      ),
+    ],
   );
 }
