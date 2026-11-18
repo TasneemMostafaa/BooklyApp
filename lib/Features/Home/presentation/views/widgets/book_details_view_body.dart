@@ -1,9 +1,6 @@
-import 'package:bookly/Features/Home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/books_action.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/book_details_section.dart';
 import 'package:bookly/Features/Home/presentation/views/widgets/custom_book_details_app_bar.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/featured_list_view_item.dart';
-import 'package:bookly/Features/Home/presentation/views/widgets/similar_books_list_view.dart';
-import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/Features/Home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -11,8 +8,6 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -22,31 +17,9 @@ class BookDetailsViewBody extends StatelessWidget {
       child: Column(
         children: [
           const CustomBookDetailsAppBar(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width*.22),
-            child: const FeaturedListViewItem(),
-          ),
-          const SizedBox(
-            height:25 ,
-          ),
-          Text('The Jungle Book', style: Styles.titleStyle20,
-          ),
-          const SizedBox(height: 4,),
-          Opacity(
-            opacity: .7,
-            child: Text('Radyard Kipling', style: Styles.titleStyle16.copyWith(fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.w500),),
-          ),
-          const SizedBox(height: 8,),
-          const BookRating(mainAxisAlignment: MainAxisAlignment.center,),
-          const SizedBox(height: 30,),
-          const BooksAction(),
+          const BookDetailsSection(),
           const SizedBox(height: 50,),
-          Align(
-            alignment: AlignmentGeometry.centerLeft,
-            child: Text('You can also like', style: Styles.titleStyle14.copyWith(fontWeight: FontWeight.w600),)),
-          const SizedBox(height: 16,),
-          const SimilarBooksListView(),
+          const SimilarBooksSection(),
           const SizedBox(height: 50,),
         ],
       ),
