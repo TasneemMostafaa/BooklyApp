@@ -11,8 +11,8 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-       GoRouter.of(context).push(AppRouter.kBookDetailsView); 
+      onTap: () {
+        GoRouter.of(context).push(AppRouter.kBookDetailsView);
       },
       child: SizedBox(
         height: 120,
@@ -46,7 +46,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Text('J. K. Rowling', style: Styles.titleStyle14),
-              
+
                   const SizedBox(height: 3),
                   Row(
                     children: [
